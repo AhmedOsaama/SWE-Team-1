@@ -1,6 +1,6 @@
 
 public class SWEGit {
-<<<<<<< HEAD:Project/src/SWEGit.java
+
 	public static void main (String[] args)
 	{
 		
@@ -52,5 +52,4 @@ public class SWEGit {
 		
 	}
 
->>>>>>> 7e74256a0004375793408ae28189c0f4de83981c:FinalProject/src/SWEGit.java
 }
