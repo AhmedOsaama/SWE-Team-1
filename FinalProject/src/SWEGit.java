@@ -1,5 +1,6 @@
-import java.util.*;
+
 public class SWEGit {
+<<<<<<< HEAD:Project/src/SWEGit.java
 	public static void main (String[] args)
 	{
 		
@@ -44,4 +45,12 @@ public class SWEGit {
 		}
 	}
 	
+=======
+	
+	public static void main(String[] args)
+	{
+		
+	}
+
+>>>>>>> 7e74256a0004375793408ae28189c0f4de83981c:FinalProject/src/SWEGit.java
 }
