@@ -1,5 +1,7 @@
 import java.util.*;
 public class SWEGit {
+	public static void main (String[] args)
+	
 	public  int[] ReverseArray(int[] arr)
 	{
 		int[] array = new int[arr.length]; //initializing an array of the same size of input array(arr).
