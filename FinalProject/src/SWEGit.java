@@ -1,5 +1,16 @@
 
 public class SWEGit {
+        public static void main(String[] args) {
+              int Size;
+         Scanner Read = new Scanner(System.in);
+         System.out.print("Enter the Size of array : ");
+        Size = Read.nextInt();
+        int[] arr = new int[Size];
+        for(int i=0 ;i<Size ; i++)
+        {
+            arr[i] = Read.nextInt();
+        }
+        }
 
         public void sort(int arr[])
         {
