@@ -23,6 +23,16 @@ public class SWEGit {
                 System.out.print(arr[i] + " ");
             System.out.println();
         }
+	 public static void MaxThreeNum(int arr[]){
+     sort(arr);
+    
+     
+     System.out.println("The first max num :"+arr[arr.length-1]);
+     System.out.println("The first max num :"+arr[arr.length-2]);
+     System.out.println("The first max num :"+arr[arr.length-3]);
+     }
+    
+
 
 }
 
