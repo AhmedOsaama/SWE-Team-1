@@ -226,21 +226,21 @@ public class SWGit {
 		}
 		
 		// Function of Get the maximum 3 numbers
-		public static void Getmaxnum(int[] array) 
+		public static void Getminnum(int[] array) 
 		{
 			// code of function Get the maximum 3 numbers
 		}
 		
 
 		// Function of Get the Minimum 3 numbers
-		public static void Getminnum(int[] arr) 
+		public static void Getmaxnum(int[] arr) 
 		{
 			     sort(arr);
 			    
 			     
 			     System.out.println("The first max num :"+arr[arr.length-1]);
-			     System.out.println("The first max num :"+arr[arr.length-2]);
-			     System.out.println("The first max num :"+arr[arr.length-3]);
+			     System.out.println("The second max num :"+arr[arr.length-2]);
+			     System.out.println("The third max num :"+arr[arr.length-3]);
 			     
 
 			// code of function Get the Minimum 3 numbers
