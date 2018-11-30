@@ -1,21 +1,75 @@
 import java.util.Scanner;
 		
-public class SWGit {
+public class SWEGit {
 	public static void main(String[] args) {
 		int Size;// size of the array 
 		int choose ;// have the choose of user for the function
+		int choose2; //choice of whether to input char or int;
 		Scanner Read = new Scanner(System.in);
+		Scanner Read2 = new Scanner(System.in);
+		
+		System.out.println("1 to enter characters,0 to enter integers");
+		choose2 = Read2.nextInt();
+	if(choose2 == 1)
+	{
+			System.out.print("Enter the Size of array : ");
+			Size = Read.nextInt();
+			
+			char[] arr = new char[Size];
+			System.out.println("Fill the array: ");
+			for(int i=0 ;i<Size ; i++)// take the numbers of array from the user
+			{
+			      arr[i] = Read.next().charAt(0);
+			}
+			
+			String[] funcs= {"Check palindrome", "Reverse array","Shift array","Exit" };
+			System.out.println("You can choose the fuction you want to run :)");
+			boolean exit = true;
+		while(exit==true)
+		{
+				
+			for(int i=0;i<4;i++) 
+			{
+				System.out.println(i+1+" - "+funcs[i]);
+			}
+			choose= Read.nextInt();
+			
+			switch(choose) 
+			{ 
+			case 1:
+				Checkpalindrome();
+				break;
+			case 2:
+				char[] rev = ReverseArray(arr);
+				printReverseArray(rev);
+				break;
+			case 3:
+				Shiftarray();
+				break;
+			case 4:
+				exit = false;
+				break;
+			}
+		  }
+		}
+		else {
+		
 		System.out.print("Enter the Size of array : ");
+		
 		Size = Read.nextInt();
 		int[] arr = new int[Size];
+		System.out.println("Fill the array: ");
 		for(int i=0 ;i<Size ; i++)// take the numbers of array from the user
 		{
 		      arr[i] = Read.nextInt();
 		}
+		
 		String[] funcs= {"Most repeated value","Sort", "Shuffle","Find the largest prime","Find the smallest prime","Check palindrome", 
 				"Check sorted","Count primes","Reverse array","Shift array","Distinct array", "Get the maximum 3 numbers", "Get the minimum 3 numbers",
 				"Get average","Get median","Return only primes", "Zero if less than zero","Exit" };
-		System.out.println("You can choose the fuction you want to run :)");
+		
+		System.out.println("You can choose the function you want to run :)");
+		
 		Boolean exit=true;
 		while(exit==true)
 		{
@@ -28,7 +82,7 @@ public class SWGit {
 		switch(choose) 
 		{
 		case 1:
-			System.out.println("Tem Most Reoeated value is ( "+most_repeated_value(arr)+" )");
+			System.out.println("The Most Repeated value is ( "+most_repeated_value(arr)+" )");
 			break;
 		case 2:
 			sort(arr);
@@ -53,7 +107,8 @@ public class SWGit {
 			Countprimes(arr);
 			break;
 		case 9:
-			Reversearray();
+			int[] rev = ReverseArray(arr);
+			printReverseArray(rev);
 			break;
 		case 10:
 			Shiftarray();
@@ -86,8 +141,8 @@ public class SWGit {
 		}
 		}
 		}
-		
-	
+}
+			
 	// Function of Most Repeated value 
 	public static int most_repeated_value(int array[])
 	{
@@ -128,11 +183,9 @@ public class SWGit {
 	// Function of the Shuffle the values
 	public static int[] Shuffle(int array[])
 	{
-		// code of Shuffle the values of the array
-	
+		// code of Shuffle the values of the array	
 		return array;
 	}
-	
 	
 	//  Function of Find the largest prime
 	public static int Largestprime(int array[])
@@ -185,10 +238,9 @@ public class SWGit {
 		
 		
 		// Function of the Reverse array
-		public static void Reversearray() 
-		{
-			/*
+			
 			 	public  static char[] ReverseArray(char[] arr) {
+			 		
 				char[] array = new char[arr.length];			//initializing an array of the same size of input array(arr).
 				for (int i=arr.length-1; i>=0; i--)
 				{
@@ -197,21 +249,41 @@ public class SWGit {
 				return array;
 		
 				}
+			 	
+			 	
+			 	public static int[] ReverseArray(int[] arr) {
+			 		
+					int[] array = new int[arr.length];			//initializing an array of the same size of input array(arr).
+					for (int i=arr.length-1; i>=0; i--)
+					{
+						array[(arr.length-1)-i] = arr[i];			//assigns elements of the input array to the new array in a reversed manner.
+					}
+					return array;
+			
+					}
 				
 				
 				//Methods to print the Reversed Array.
 			
 				
-				public static void printArray(char[] arr)
+				public static void printReverseArray(char[] arr)
 				{
 					for(int i=0; i<arr.length;i++)
 					{
 						System.out.print(arr[i]);
 					}
+					System.out.println();
 				}
-			 */
-			//code of function Reverse array
-		}
+				
+				public static void printReverseArray(int[] arr)
+				{
+					for(int i=0; i<arr.length;i++)
+					{
+						System.out.print(arr[i]);
+					}
+					System.out.println();
+				}
+		
 		
 		//Function of Shift array
 		public static void Shiftarray() 
