@@ -11,18 +11,6 @@ public class SWEGit {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-              int Size;
-         Scanner Read = new Scanner(System.in);
-         System.out.print("Enter the Size of array : ");
-        Size = Read.nextInt();
-        int[] arr = new int[Size];
-        for(int i=0 ;i<Size ; i++)
-        {
-            arr[i] = Read.nextInt();
-        }
-        System.out.println(Get_maidan(arr));
-    }
 
 public static Boolean  CheckSorted (int[] arr)
      {
@@ -37,7 +25,44 @@ public static Boolean  CheckSorted (int[] arr)
 
      return (ascending||descending);
      }
- public static void sort(int arr[])
+
+
+	public static int[] ReverseArray(int[] arr)
+	{
+		int[] array = new int[arr.length]; //initializing an array of the same size of input array(arr).
+		for (int i=arr.length-1; i>=0; i--)
+		{
+			array[(arr.length-1)-i] = arr[i];		//assigns elements of the input array to the new array in a reversed manner.
+		}
+		
+		return array;
+	}
+	
+	public  static char[] ReverseArray(char[] arr) {
+		char[] array = new char[arr.length];			//initializing an array of the same size of input array(arr).
+		for (int i=arr.length-1; i>=0; i--)
+		{
+			array[(arr.length-1)-i] = arr[i];			//assigns elements of the input array to the new array in a reversed manner.
+		}
+		return array;
+		
+	}
+	
+	
+	//Methods to print the Reversed Array.
+
+	
+	public static void printArray(char[] arr)
+	{
+		for(int i=0; i<arr.length;i++)
+		{
+			System.out.print(arr[i]);
+		}
+	}
+	
+
+        public static void sort(int arr[])
+
         {
             int len = arr.length;// length of the array
             for (int i = 0; i < len-1; i++)//for loop to chheck all elements in the array
@@ -50,13 +75,14 @@ public static Boolean  CheckSorted (int[] arr)
                     }
         }
    /* Prints the array */
-        void printArray(int arr[])
+    public static void printArray(int arr[])
         {
             int n = arr.length;
             for (int i=0; i<n; ++i)
                 System.out.print(arr[i] + " ");
             System.out.println();
         }
+
     public static float Get_maidan(int[] arr) {
         float madian = 0;
         boolean flag =false;
@@ -72,6 +98,9 @@ public static Boolean  CheckSorted (int[] arr)
         int index = 0;
         index = arr.length / 2;
 
+	 
+   
+
         if (arr.length % 2 == 0) {
             madian = (float) ((arr[index] + arr[index - 1]) / 2.0);
         }
@@ -82,6 +111,14 @@ public static Boolean  CheckSorted (int[] arr)
 
         return madian;
     }
+  public static void MaxThreeNum(int arr[]){
+     sort(arr);
+    
+     
+     System.out.println("The first max num :"+arr[arr.length-1]);
+     System.out.println("The first max num :"+arr[arr.length-2]);
+     System.out.println("The first max num :"+arr[arr.length-3]);
+     }
 
     public static int most_repeated_value(int array[])
 	{
@@ -104,12 +141,7 @@ public static Boolean  CheckSorted (int[] arr)
 	}
 	public static void main(String[] args)
 	{
-		int a[] = new int[4];
-		a[0] = 1;
-		a[1] = 4;
-		a[2] = 4;
-		a[3] = 3;
-		System.out.println(most_repeated_value(a));
+
 
 	}
 
