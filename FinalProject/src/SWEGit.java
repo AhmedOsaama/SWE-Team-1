@@ -1,3 +1,11 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package swgit;
+
+
 import java.util.Scanner;
 		
 public class SWGit {
@@ -68,7 +76,7 @@ public class SWGit {
 			Getminnum(arr);
 			break;
 		case 14:
-			GetAvg(arr);
+			System.out.println("The Average of the array is "+GetAvg(arr));
 			break;
 		case 15:
 			System.out.println(" The maidian of the Array is ( "+Get_maidan(arr)+ " )");
@@ -250,7 +258,11 @@ public class SWGit {
 		public static int GetAvg(int[] array) 
 		{
 			int average=0;
-			// code of function Get the Average
+			for(int i=0; i<array.length;i++)
+			{
+				average+=array[i];
+			}
+			average/=array.length;
 			return average;
 		}
 		
