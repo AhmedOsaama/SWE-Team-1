@@ -44,7 +44,7 @@ public class SWEGit {
 
                 switch (choose) {
                     case 1:
-                        boolean pal = palindorme(arr);
+                        boolean pal = palindrome(arr);
 						if(pal)
 							System.out.println("it is a palindrome");
 						else
@@ -109,7 +109,7 @@ public class SWEGit {
                         System.out.println("The Smallest Prime Number is: " + Smallestprime(arr));
                         break;
                     case 6:
-                        boolean pal = palindorme(arr);
+                        boolean pal = palindrome(arr);
 						if(pal)
 							System.out.println("it is a palindrome");
 						else
