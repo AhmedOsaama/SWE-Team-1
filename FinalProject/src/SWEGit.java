@@ -297,10 +297,11 @@ public class SWEGit {
 			//code of function Distinct array
 		}
 		
-		// Function of Get the maximum 3 numbers
+		// Function of Get the Minimum 3 numbers
 		public static void Getminnum(int[] array) 
 		{
-			// code of function Get the maximum 3 numbers
+			// code of function Get the Minimum 3 numbers
+			sort(array); // sort the array to get the Minimum 3 elements
 		}
 		
 
