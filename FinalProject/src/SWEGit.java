@@ -44,7 +44,11 @@ public class SWEGit {
 
                 switch (choose) {
                     case 1:
-                        Checkpalindrome();
+                        boolean pal = palindorme(arr);
+						if(pal)
+							System.out.println("it is a palindrome");
+						else
+							System.out.println("it is not a palindrome");						
                         break;
                     case 2:
                         char[] rev = ReverseArray(arr);
@@ -105,8 +109,12 @@ public class SWEGit {
                         System.out.println("The Smallest Prime Number is: " + Smallestprime(arr));
                         break;
                     case 6:
-                        Checkpalindrome();
-                        break;
+                        boolean pal = palindorme(arr);
+						if(pal)
+							System.out.println("it is a palindrome");
+						else
+							System.out.println("it is not a palindrome");
+						break;
                     case 7:
                         CheckSorted(arr);
                         break;
@@ -241,14 +249,44 @@ public class SWEGit {
         return -1;
     }
 
-    // Function of Check palindrome
-    public static Boolean Checkpalindrome() {
-        Boolean palend = false;
-        // code of Function of Check palindrome
-        return palend;
-
-    }
-
+   // Function of Check palindrome INTEGER
+	public static boolean palindrome(int[] in)
+	{
+		int[] reverse = new int[in.length];
+		int j = 0;
+		for(int i = in.length - 1;  i>=0; i--)
+		{
+			reverse[j++] = in[i];
+		}
+		for(int i = 0; i < in.length; i++)
+		{
+			if(in[i] != reverse[i])
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	// Function of check palindrome CHARACTER
+	public static boolean palindrome(char[] in)
+	{
+		char[] reverse = new char[in.length];
+		int j = 0;
+		for(int i = in.length - 1;  i>=0; i--)
+		{
+			reverse[j++] = in[i];
+		}
+		for(int i = 0; i < in.length; i++)
+		{
+			if(in[i] != reverse[i])
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	
     // Function of Check sorted
     public static Boolean CheckSorted(int[] arr) {
         Boolean descending = false, ascending = false;
