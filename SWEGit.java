@@ -403,7 +403,11 @@ public class SWEGit {
 
     // Function of Distinct array
     public static void Distinctarray(int[] array) {
-        //code of function Distinct array
+        ArrayList<int> repeated = new ArrayList<>();
+	for(int i=0; i<array.length; i++)
+		if(!(repeated.contain(array[i]))
+			repeated.add(array[i]);
+	System.out.println("Distinct Elements: " + repeated.toString());
     }
 
     // Function of Get the Minimum 3 numbers

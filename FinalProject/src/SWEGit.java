@@ -58,13 +58,13 @@ public class SWEGit {
                         Shiftarray();
                         break;
                     case 4:
-			Checkpalindrome();
-			char[] rev = ReverseArray(arr);
+                    	Checkpalindrome();
+                    	char[] rev = ReverseArray(arr);
                         printReverseArray(rev);
-			Shiftarray();
-			break;
+                        Shiftarray();
+                        break;
                     case 5:
-		    	exit = false;
+                    	exit = false;
                         break;
                 }
             }
@@ -383,7 +383,11 @@ public class SWEGit {
 
     // Function of Distinct array
     public static void Distinctarray(int[] array) {
-        //code of function Distinct array
+        ArrayList<int> repeated = new ArrayList<>();
+        for(int i=0; i<array.length; i++)
+        	if(!(repeated.contain(array[i])))
+        		repeated.add(array[i]);
+        System.out.println("Distinct Array: " + repeated.toString());
     }
 
     // Function of Get the Minimum 3 numbers
