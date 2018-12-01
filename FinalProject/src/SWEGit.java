@@ -297,10 +297,14 @@ public class SWEGit {
 			//code of function Distinct array
 		}
 		
-		// Function of Get the maximum 3 numbers
+		// Function of Get the Minimum 3 numbers
 		public static void Getminnum(int[] array) 
 		{
-			// code of function Get the maximum 3 numbers
+			// code of function Get the Minimum 3 numbers
+			sort(array); // sort the array to get the Minimum 3 elements
+			System.out.println("The first min num :"+array[0]); // print the first min element of the array
+			System.out.println("The second min num :"+array[1]); // print the second min element of the array
+			System.out.println("The third min num :"+array[2]); // print the third min element of the array
 		}
 		
 
