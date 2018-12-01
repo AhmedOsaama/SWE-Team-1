@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package swgit;
 
 import java.util.Scanner;
 import java.util.Collections;
@@ -58,9 +57,13 @@ public class SWEGit {
                         Shiftarray();
                         break;
                     case 4:
-			Checkpalindrome();
-			char[] rev = ReverseArray(arr);
-                        printReverseArray(rev);
+                    	boolean pall = palindrome(arr);
+						if(pall)
+							System.out.println("it is a palindrome");
+						else
+							System.out.println("it is not a palindrome");
+			char[] revv = ReverseArray(arr);
+                        printReverseArray(revv);
 			Shiftarray();
 			break;
                     case 5:
@@ -159,18 +162,22 @@ public class SWEGit {
 			System.out.println("The Most Repeated value is ( " + most_repeated_value(arr) + " )");
 			sort(arr);
                         printArray(arr);
-			int[] newarr = new int[arr.length];
+			int[] newarrr = new int[arr.length];
                         newarr=Shuffle(arr);
                         for (int i = 0; i < newarr.length; i++) {
                             System.out.println(newarr[i]);
                         }
 			Largestprime(arr);
 			System.out.println("The Smallest Prime Number is: " + Smallestprime(arr));
-			Checkpalindrome();
+			boolean pall = palindrome(arr);
+			if(pall)
+				System.out.println("it is a palindrome");
+			else
+				System.out.println("it is not a palindrome");
 			CheckSorted(arr);
 			Countprimes(arr);
-			int[] rev = ReverseArray(arr);
-                        printReverseArray(rev);
+			int[] revv = ReverseArray(arr);
+                        printReverseArray(revv);
 			Shiftarray();
 			Distinctarray(arr);
 			Getmaxnum(arr);
