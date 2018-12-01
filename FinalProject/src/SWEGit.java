@@ -330,9 +330,9 @@ public class SWEGit {
     public static void Getmaxnum(int[] arr) {
         sort(arr);
 
-        System.out.println("The first max num :" + arr[arr.length - 1]);
-        System.out.println("The second max num :" + arr[arr.length - 2]);
-        System.out.println("The third max num :" + arr[arr.length - 3]);
+        System.out.println("The first max number :" + arr[arr.length - 1]);
+        System.out.println("The second max number :" + arr[arr.length - 2]);
+        System.out.println("The third max number :" + arr[arr.length - 3]);
 
         // code of function Get the Minimum 3 numbers
     }
