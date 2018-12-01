@@ -5,11 +5,11 @@
  */
 package swgit;
 
-
 import java.util.Scanner;
 import java.util.Collections;
+import java.util.Random;
 import java.util.Vector;
-	
+
 public class SWEGit {
 
     public static void main(String[] args) {
@@ -92,7 +92,11 @@ public class SWEGit {
                         printArray(arr);
                         break;
                     case 3:
-                        Shuffle(arr);
+                        int[] newarr = new int[arr.length];
+                        newarr=Shuffle(arr);
+                        for (int i = 0; i < newarr.length; i++) {
+                            System.out.println(newarr[i]);
+                        }
                         break;
                     case 4:
                         Largestprime(arr);
@@ -184,8 +188,21 @@ public class SWEGit {
 
     // Function of the Shuffle the values
     public static int[] Shuffle(int array[]) {
-        // code of Shuffle the values of the array	
-        return array;
+        int[] temp = new int[array.length];
+        Vector<Integer> nums = new Vector();
+
+        for (int i = 0; i < array.length; i++) {
+            Random rand = new Random();
+            int n = rand.nextInt(50) % array.length;
+            int check = nums.indexOf(n);
+            if (check == -1) {
+                nums.add(n);
+                temp[i] = array[n];
+            } else {
+                i--;
+            }
+        }
+        return temp;
     }
 
     //  Function of Find the largest prime
@@ -198,7 +215,7 @@ public class SWEGit {
 
     // Function of Find the smallest prime number in the array
     public static int Smallestprime(int array[]) {
-          int number = 0, reminder = 0, counter = 0;
+        int number = 0, reminder = 0, counter = 0;
         Vector<Integer> temp = new Vector();
         for (int i = 0; i < array.length; i++) {
             number = array[i];
@@ -371,6 +388,5 @@ public class SWEGit {
         }
         System.out.println();
     }
-
 
 }
