@@ -32,7 +32,7 @@ public class SWEGit {
                 arr[i] = Read.next().charAt(0);
             }
 
-            String[] funcs = {"Check palindrome", "Reverse array", "Shift array", "Exit"};
+            String[] funcs = {"Check palindrome", "Reverse array", "Shift array","All", "Exit"};
             System.out.println("You can choose the fuction you want to run :)");
             boolean exit = true;
             while (exit == true) {
@@ -58,7 +58,13 @@ public class SWEGit {
                         Shiftarray();
                         break;
                     case 4:
-                        exit = false;
+			Checkpalindrome();
+			char[] rev = ReverseArray(arr);
+                        printReverseArray(rev);
+			Shiftarray();
+			break;
+                    case 5:
+		    	exit = false;
                         break;
                 }
             }
@@ -76,7 +82,7 @@ public class SWEGit {
 
             String[] funcs = {"Most repeated value", "Sort", "Shuffle", "Find the largest prime", "Find the smallest prime", "Check palindrome",
                 "Check sorted", "Count primes", "Reverse array", "Shift array", "Distinct array", "Get the maximum 3 numbers", "Get the minimum 3 numbers",
-                "Get average", "Get median", "Return only primes", "Zero if less than zero", "Exit"};
+                "Get average", "Get median", "Return only primes", "Zero if less than zero","All", "Exit"};
 
             System.out.println("You can choose the function you want to run :)");
 
@@ -150,6 +156,31 @@ public class SWEGit {
                         ziflessz(arr);
                         break;
                     case 18:
+			System.out.println("The Most Repeated value is ( " + most_repeated_value(arr) + " )");
+			sort(arr);
+                        printArray(arr);
+			int[] newarr = new int[arr.length];
+                        newarr=Shuffle(arr);
+                        for (int i = 0; i < newarr.length; i++) {
+                            System.out.println(newarr[i]);
+                        }
+			Largestprime(arr);
+			System.out.println("The Smallest Prime Number is: " + Smallestprime(arr));
+			Checkpalindrome();
+			CheckSorted(arr);
+			Countprimes(arr);
+			int[] rev = ReverseArray(arr);
+                        printReverseArray(rev);
+			Shiftarray();
+			Distinctarray(arr);
+			Getmaxnum(arr);
+			Getminnum(arr);
+			System.out.println("The Average of the array is " + GetAvg(arr));
+			System.out.println(" The maidian of the Array is ( " + Get_maidan(arr) + " )");
+			onlyprimes(arr);
+			ziflessz(arr);
+			break;
+		    case 19:
                         exit = false;
                         break;
 
