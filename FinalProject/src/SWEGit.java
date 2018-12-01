@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 import java.util.Vector;
@@ -31,12 +31,12 @@ public class SWEGit {
                 arr[i] = Read.next().charAt(0);
             }
 
-            String[] funcs = {"Check palindrome", "Reverse array", "Shift array","All", "Exit"};
+            String[] funcs = {"Check palindrome", "Reverse array", "Shift array","Distinct Array", "All", "Exit"};
             System.out.println("You can choose the fuction you want to run :)");
             boolean exit = true;
             while (exit == true) {
 
-                for (int i = 0; i < 4; i++) {
+                for (int i = 0; i < 5; i++) {
                     System.out.println(i + 1 + " - " + funcs[i]);
                 }
                 choose = Read.nextInt();
@@ -57,17 +57,22 @@ public class SWEGit {
                         Shiftarray();
                         break;
                     case 4:
+                    	Distinctarray(arr);
+                    	break;
+
+                    case 5:
                     	boolean pall = palindrome(arr);
 						if(pall)
 							System.out.println("it is a palindrome");
 						else
-							System.out.println("it is not a palindrome");
-			char[] revv = ReverseArray(arr);
+							System.out.println("it is not a palindrome");	
+                    	char[] revv = ReverseArray(arr);
                         printReverseArray(revv);
-			Shiftarray();
-			break;
-                    case 5:
-		    	exit = false;
+                        Shiftarray();
+                        Distinctarray(arr);
+                        break;
+                    case 6:
+                    	exit = false;
                         break;
                 }
             }
@@ -159,13 +164,16 @@ public class SWEGit {
                         ziflessz(arr);
                         break;
                     case 18:
+                    	
 			System.out.println("The Most Repeated value is ( " + most_repeated_value(arr) + " )");
+			
 			sort(arr);
                         printArray(arr);
-			int[] newarrr = new int[arr.length];
-                        newarr=Shuffle(arr);
-                        for (int i = 0; i < newarr.length; i++) {
-                            System.out.println(newarr[i]);
+                        
+                        int[] newarr1 = new int[arr.length];
+                        newarr1=Shuffle(arr);
+                        for (int i = 0; i < newarr1.length; i++) {
+                            System.out.println(newarr1[i]);
                         }
 			Largestprime(arr);
 			System.out.println("The Smallest Prime Number is: " + Smallestprime(arr));
@@ -176,8 +184,10 @@ public class SWEGit {
 				System.out.println("it is not a palindrome");
 			CheckSorted(arr);
 			Countprimes(arr);
+			
 			int[] revv = ReverseArray(arr);
                         printReverseArray(revv);
+                        
 			Shiftarray();
 			Distinctarray(arr);
 			Getmaxnum(arr);
@@ -389,8 +399,20 @@ public class SWEGit {
     }
 
     // Function of Distinct array
-    public static void Distinctarray(int[] array) {
-        //code of function Distinct array
+    public static void Distinctarray(char[] array) {
+        ArrayList<Character> repeated = new ArrayList<>();
+        for(int i=0; i<array.length; i++)
+        	if(!(repeated.contains(array[i])))
+        		repeated.add(array[i]);
+        System.out.println("Distinct Array: " + repeated.toString());
+    }
+    
+    public static void Distinctarray(int[] array){
+    	ArrayList<Integer> repeated = new ArrayList<>();
+    	for(int i=0; i<array.length; i++)
+    		if(! repeated.contains(array[i]))
+    			repeated.add(array[i]);
+    	System.out.println("Distinct Elements: " + repeated.toString());
     }
 
     // Function of Get the Minimum 3 numbers
