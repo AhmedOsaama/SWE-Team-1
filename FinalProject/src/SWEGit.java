@@ -113,7 +113,7 @@ public class SWEGit {
                         }
                         break;
                     case 4:
-                        Largestprime(arr);
+                        LargestPrime(); 
                         break;
                     case 5:
                         System.out.println("The Smallest Prime Number is: " + Smallestprime(arr));
@@ -248,13 +248,61 @@ public class SWEGit {
         return temp;
     }
 
-    //  Function of Find the largest prime
-    public static int Largestprime(int array[]) {
-        int Larprime = 0;
-        // code of of Find the Largest prime number in the array
-
-        return Larprime;
+     public static void LargestPrime()
+    {
+        int temp = 0;
+        Scanner input=new Scanner(System.in);
+       System.out.println("enter size of array");
+       
+       int sz = input.nextInt();
+       System.out.println("enter UR numbers");
+       int []num =new int[sz];
+        int []primes= new int [sz];
+        int i=0; int j=0; int f=0; int n = 0;
+        
+        for(i=0;i<sz;i++)
+        {
+            num[i]=input.nextInt();
+        }
+     //   Arrays.sort(num);
+      for(i=0;i<sz;i++)
+      {
+          n=num[i];
+          f=0;
+          for(j=2;j<n;j++)
+          {
+              if(n%j==0)
+              {
+                  f=1;
+                  break;
+              }
+          }
+          if(f==0)
+          {  
+              System.out.println("a prime : " +n); 
+               for (int k=0;k<n;k++)
+                   primes[i]=n;
+              
+          }
+          temp=primes[0];
+       for (int mm=0;mm<sz;mm++)
+          {
+         
+              if(primes[mm]>temp)
+              {
+              temp=primes[mm];
+              }
+            
+          }
+         
+      }
+           Arrays.sort(primes);
+          System.out.println( "the largest prime number is " + temp ); 
+          
+        
     }
+    
+    
 
     // Function of Find the smallest prime number in the array
     public static int Smallestprime(int array[]) {
